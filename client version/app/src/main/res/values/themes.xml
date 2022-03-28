@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.GYMManagementSystemAppClientVersion"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+
+        <item name="colorPrimaryVariant">@color/purple_50</item>
+
+        <!-- extra colors -->
+        <item name="colorSecondary">@color/green_lightTheme</item>
+        <item name="colorSecondaryVariant">@color/red_lightTheme</item>
+
+        <!-- Status and Nav bar color. -->
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="o_mr1">
+            ?android:attr/colorBackground
+        </item>
+
+        <item name="fontFamily">@font/averta_normal</item>
+
+    </style>
+
+    <style name="AppThemeNoColoredStatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_500</item>
+        <item name="colorAccent">@color/purple_500</item>
+
+        <item name="android:statusBarColor">?android:attr/windowBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="o_mr1">
+            ?android:attr/colorBackground
+        </item>
+    </style>
+
+    <style name="Theme.GYMManagementSystemAppClientVersion.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

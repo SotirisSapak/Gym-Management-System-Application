@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/484419c16cd793c66cf79f32f3a507a9/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/484419c16cd793c66cf79f32f3a507a9/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/484419c16cd793c66cf79f32f3a507a9/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce2087e740b1d9c6a8b6347c0c1362e1/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce2087e740b1d9c6a8b6347c0c1362e1/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce2087e740b1d9c6a8b6347c0c1362e1/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1a4b0ff05119c52a10ce91cd65f33ee/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1a4b0ff05119c52a10ce91cd65f33ee/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1a4b0ff05119c52a10ce91cd65f33ee/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10511abe61b5e019dee51c3cedfaf289/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10511abe61b5e019dee51c3cedfaf289/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10511abe61b5e019dee51c3cedfaf289/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c422971709d8687881b233ec52dd0194/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c422971709d8687881b233ec52dd0194/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c422971709d8687881b233ec52dd0194/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/32f757eaf154fa502d94bad31168e16a/transformed/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/32f757eaf154fa502d94bad31168e16a/transformed/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/32f757eaf154fa502d94bad31168e16a/transformed/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0a3cafad7760425bf4bc8dda0abab0bf/transformed/jetified-navigationtabstrip-1.0.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0a3cafad7760425bf4bc8dda0abab0bf/transformed/jetified-navigationtabstrip-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0a3cafad7760425bf4bc8dda0abab0bf/transformed/jetified-navigationtabstrip-1.0.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.devlight.navigationtabstrip/navigationtabstrip/1.0.4/dd5bc3ab10f577218193a8093273d648d5660354/navigationtabstrip-1.0.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.devlight.navigationtabstrip/navigationtabstrip/1.0.4/5c720c4fcabc120a621207ab48420067242a8604/navigationtabstrip-1.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.GYMManagementSystemAppClientVersion"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary_DarkTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimary_DarkTheme</item>
+        <item name="colorAccent">@color/colorAccent_DarkTheme</item>
+
+        <item name="colorPrimaryVariant">@color/purple_900</item>
+
+        <!-- extra colors -->
+        <item name="colorSecondary">@color/green_darkTheme</item>
+        <item name="colorSecondaryVariant">@color/red_darkTheme</item>
+        <item name="android:colorBackground">@color/background_darkTheme</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:navigationBarColor" tools:targetApi="o_mr1">
+            ?android:attr/colorBackground
+        </item>
+
+        <item name="fontFamily">@font/averta_normal</item>
+
+    </style>
+
+</resources>

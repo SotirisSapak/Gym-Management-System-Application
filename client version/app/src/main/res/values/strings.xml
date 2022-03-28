@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">GYM management system app - client version</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="create_new_profile">Create new profile</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="create_profile_summary">Create a new profile to register into the GYM.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create account</string>
+    <string name="login">Login</string>
+    <string name="receipt_title">Receipt Title</string>
+    <string name="default_date">1/1/1970 00:00</string>
+    <string name="default_amount">120.34€</string>
+    <string name="overview">Account overview</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="message_summary">Message summary</string>
+    <string name="message_title">Message title</string>
+    <string name="there_are_no_messages">There are no messages yet!</string>
+    <string name="there_are_no_important_messages">No important messages yet!</string>
+    <string name="all_your_receipts_will_appear_here">All your receipts will appear here</string>
+
+    <string name="preview_message">Preview Message</string>
+    <string name="message_body">Message body</string>
+    <string name="launcher_icon">launcher icon</string>
+    <string name="welcome_to_gym">Welcome to GYM</string>
+    <string name="new_user">New user</string>
+    <string name="you_cannot_edit_these_info">You cannot edit these info</string>
+    <string name="apply_changes">Apply changes</string>
+    <string name="internet_connection_account_update">Make sure that you have internet connection in order to update your account info</string>
+    <string name="no_receipts_found">No receipts found</string>
+    <string name="today">Today\'s schedule</string>
+    <string name="open_at">Open at:</string>
+    <string name="close_at">Close at:</string>
+    <string name="full_schedule">Full schedule</string>
+    <string name="non_paid_receipts">Non-paid receipts</string>
+    <string name="paid_receipts">Paid receipts</string>
+    <string name="all_messages">All messages</string>
+    <string name="important_messages">Important messages</string>
+
+</resources>

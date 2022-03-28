@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_500">#9C27B0</color>
+
+    <color name="purple_50">#E8EAF6</color>
+    <color name="purple_900">#311B92</color>
+
+    <color name="green">#81C784</color>
+
+    <color name="colorPrimary">#E62828BC</color>
+
+    <color name="colorPrimary_DarkTheme">#708CFF</color>
+    <color name="colorAccent_DarkTheme">#708CFF</color>
+
+    <!-- for light theme extra colors -->
+    <color name="red_lightTheme">#E68D8D</color>
+    <color name="green_lightTheme">#8DC88F</color>
+
+    <!-- for dark theme extra colors -->
+    <color name="red_darkTheme">#D32F2F</color>
+    <color name="green_darkTheme">#388E3C</color>
+    <color name="background_darkTheme">#F71C003E</color>
+
+
+</resources>

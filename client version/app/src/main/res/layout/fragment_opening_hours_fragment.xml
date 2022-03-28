@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivityFragments.OpeningHoursFragment"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefresh">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:id="@+id/todayTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/today"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="?colorPrimary" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cardTodaySchedule"
+                    android:layout_below="@+id/todayTitle"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/todayScheduleLayout">
+
+                        <TextView
+                            android:id="@+id/currentDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/monday"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/currentDay"
+                            android:layout_marginStart="5dp"
+                            android:layout_centerVertical="true">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/todayScheduleWorkingDay"
+                                android:visibility="visible">
+
+                                <RelativeLayout
+                                    android:id="@+id/openHoursRelativeLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/iconOpenHours"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_twotone_lock_open"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_centerVertical="true"
+                                        app:tint="?colorSecondary" />
+
+                                    <TextView
+                                        android:id="@+id/openHourTitle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toEndOf="@+id/iconOpenHours"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:text="@string/open_at"
+                                        android:alpha="0.6"/>
+
+                                    <TextView
+                                        android:id="@+id/openHourTV"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toEndOf="@+id/iconOpenHours"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:text=""
+                                        android:textStyle="bold"
+                                        android:layout_below="@+id/openHourTitle"
+                                        android:textSize="18sp" />
+
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_below="@+id/openHoursRelativeLayout"
+                                    android:alpha="0.1"
+                                    android:background="?android:attr/colorControlNormal"/>
+
+                                <RelativeLayout
+                                    android:id="@+id/closeHoursRelativeLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/openHoursRelativeLayout">
+
+                                    <ImageView
+                                        android:id="@+id/iconCloseHours"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_twotone_lock"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_centerVertical="true"
+                                        android:alpha="0.8"
+                                        app:tint="?colorSecondaryVariant"/>
+
+                                    <TextView
+                                        android:id="@+id/closeHourTitle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toEndOf="@+id/iconCloseHours"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:text="@string/close_at"
+                                        android:alpha="0.6"/>
+
+                                    <TextView
+                                        android:id="@+id/closeHourTV"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toEndOf="@+id/iconCloseHours"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:text=""
+                                        android:textStyle="bold"
+                                        android:textSize="18sp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_below="@+id/closeHourTitle"/>
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/todayScheduleDayOff"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:id="@+id/closedSign"
+                                    android:src="@drawable/closed_sign"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="20dp"
+                                    />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/fullScheduleTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_schedule"
+                    android:layout_below="@+id/cardTodaySchedule"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="?colorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fullScheduleTitle">
+
+                    <TextView
+                        android:id="@+id/Monday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monday"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp" />
+
+                    <View
+                        android:id="@+id/line_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/Monday"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Tuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tuesday"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/line_1"/>
+
+                    <View
+                        android:id="@+id/line_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/Tuesday"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Wednesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wednesday"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/line_2"/>
+
+                    <View
+                        android:id="@+id/line_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/Wednesday"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Thursday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/thursday"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/line_3"/>
+
+                    <View
+                        android:id="@+id/line_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/Thursday"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Friday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/friday"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/line_4"/>
+
+                    <View
+                        android:id="@+id/line_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/Friday"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Saturday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/saturday"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/line_5"/>
+
+                    <View
+                        android:id="@+id/line_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/Saturday"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Sunday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sunday"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_below="@+id/line_6"
+                        android:layout_marginBottom="20dp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true"
+        android:visibility="visible"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".MainActivityFragments.HomeFragment"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefresh">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    android:id="@+id/titleAccountOverview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/overview"
+                    android:textSize="16sp"
+                    android:alpha="0.6"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/totalReceiptMoney"
+                    android:text="@string/default_amount"
+                    android:layout_below="@+id/titleAccountOverview"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="32sp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/tableStats"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_below="@+id/totalReceiptMoney">
+
+                    <TableRow>
+
+                        <RelativeLayout android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/titlePaid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/paid_receipts"
+                                android:alpha="0.6"/>
+
+                            <TextView
+                                android:id="@+id/paidTV"
+                                android:layout_below="@+id/titlePaid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="?colorSecondary"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:text="@string/default_amount"
+                                android:textStyle="bold"/>
+
+                        </RelativeLayout>
+                        <RelativeLayout android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/titleUnPaid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:alpha="0.6"
+                                android:text="@string/non_paid_receipts"/>
+
+                            <TextView
+                                android:id="@+id/nonPaidTV"
+                                android:layout_below="@+id/titleUnPaid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="?colorSecondaryVariant"
+                                android:textStyle="bold"
+                                android:text="@string/default_amount"/>
+
+                        </RelativeLayout>
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/item_dotted_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@drawable/dotted_line"
+                    android:layerType="software"
+                    android:layout_below="@+id/tableStats"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:alpha="0.6"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewReceipts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:layout_below="@+id/item_dotted_line"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layoutNoReceipts"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="90dp"
+                    android:background="?android:attr/colorBackground">
+
+                    <ImageView
+                        android:id="@+id/no_receipt_imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/bill" />
+
+                    <TextView
+                        android:id="@+id/no_receipt_textView_editable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/no_receipt_imageView"
+                        android:text="@string/no_receipts_found"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="?colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/no_receipt_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/no_receipt_textView_editable"
+                        android:text="@string/all_your_receipts_will_appear_here"
+                        android:textSize="16sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+

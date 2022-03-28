@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout"
+        android:background="?android:attr/windowBackground"
+        app:liftOnScroll="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/colorBackground"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/toolbarDashboardIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_round_logout"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:padding="10dp"
+                    android:layout_marginStart="10dp"
+                    android:visibility="visible"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="28sp"
+                    android:layout_below="@+id/toolbarDashboardIcon"
+                    android:textAlignment="center"
+                    android:alpha="0.8"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:layout_centerHorizontal="true"
+                android:elevation="0dp"
+                android:id="@+id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                app:stl_indicatorGravity="center"
+                app:stl_indicatorThickness="34dp"
+                app:stl_dividerColor="@android:color/transparent"
+                app:stl_indicatorCornerRadius="68dp"
+                app:stl_underlineThickness="0dp"
+                app:stl_defaultTabTextAllCaps="false"
+                app:stl_defaultTabTextColor="?android:attr/colorControlNormal"
+                app:stl_indicatorColor="?colorPrimaryVariant" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+
+    <View
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/colorControlNormal"
+        android:alpha="0.3"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
