@@ -40,6 +40,7 @@ This is the basic database schema
 #### Image below is the complete database structure.
 ![image](https://user-images.githubusercontent.com/98215854/160466249-70ac8a4d-6117-4032-bc18-7c8626de5d9e.png)
 
+### Project licence
 ```licence 
 Copyright 2022 SotirisSapak
 
