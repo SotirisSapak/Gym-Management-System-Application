@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.DashboardFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMonthlyStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/relativeMonthlyStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/monthTitleTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monthly_revenue"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                    <TextView
+                        android:id="@+id/yearSummaryTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monthly_stats_summary"
+                        android:layout_below="@+id/monthTitleTV"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_round_arrow_down"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeMonthlyStatsBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@+id/relativeMonthlyStats">
+
+                    <HorizontalScrollView
+                        android:id="@+id/monthsHSV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardJan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="1dp"
+                                app:strokeColor="?colorPrimary">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/january"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardFeb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                android:layout_toEndOf="@+id/cardJan"
+                                app:cardCornerRadius="22dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/february"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardMar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardFeb">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/march"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardApr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardMar">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/april"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardMay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardApr">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/may"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardJune"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardMay">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/june"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardJuly"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toEndOf="@+id/cardJune"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/july"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardAug"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardJuly">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/august"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardSep"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardAug">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/september"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardOct"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardSep">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/october"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardNov"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardOct">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/november"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardDec"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:clickable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="22dp"
+                                android:layout_toEndOf="@+id/cardNov">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/december"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        android:layout_below="@+id/monthsHSV"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/selectUserTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_user"
+                        android:layout_below="@+id/line"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cardDashboardSpinnerUsers"
+                        android:layout_below="@+id/selectUserTextView"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        app:strokeWidth="0dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="2dp"
+                        app:strokeColor="?colorPrimary">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageDashboardSpinnerUsers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_baseline_person"
+                                app:tint="?colorPrimary"
+                                android:layout_margin="10dp"/>
+
+                            <Spinner
+                                android:id="@+id/dashboardSpinnerUsers"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:textAlignment="center"
+                                android:layout_toEndOf="@+id/imageDashboardSpinnerUsers" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <HorizontalScrollView
+                        android:id="@+id/revenueContainerHSV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:layout_below="@+id/cardDashboardSpinnerUsers"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:id="@+id/revenueContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/revenueCardAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                android:layout_margin="20dp"
+                                app:strokeColor="?colorPrimaryVariant"
+                                app:strokeWidth="1dp"
+                                app:cardElevation="8dp">
+
+                                <TextView
+                                    android:id="@+id/revenueCardAmountTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default_amount"
+                                    android:layout_margin="15dp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/add"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_round_add"
+                                android:layout_toEndOf="@+id/revenueCardAmount"
+                                app:tint="?colorPrimary"
+                                android:layout_marginEnd="-10dp"
+                                android:layout_marginStart="-10dp"/>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/revenueCardExpectedAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                android:layout_margin="20dp"
+                                app:strokeColor="?colorSecondaryVariant"
+                                app:strokeWidth="1dp"
+                                app:cardElevation="8dp"
+                                android:layout_toEndOf="@+id/add">
+
+                                <TextView
+                                    android:id="@+id/nonPaidCardAmountTV_editable"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default_amount"
+                                    android:layout_margin="15dp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/arrowRight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:rotation="180"
+                                android:layout_marginEnd="-10dp"
+                                android:layout_marginStart="-10dp"
+                                android:src="@drawable/ic_round_left_arrow"
+                                android:layout_toEndOf="@+id/revenueCardExpectedAmount"/>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/revenueCardTotalAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                android:layout_margin="20dp"
+                                app:strokeColor="?colorPrimary"
+                                app:strokeWidth="1dp"
+                                app:cardElevation="8dp"
+                                android:layout_toEndOf="@+id/arrowRight">
+
+                                <TextView
+                                    android:id="@+id/revenueCardAmountTV_editable"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default_amount"
+                                    android:layout_margin="15dp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/paid_receiptsTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paid_receipts"
+                        android:textColor="?colorPrimaryVariant"
+                        android:layout_below="@+id/revenueContainerHSV"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:textSize="12sp"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:id="@+id/nonPaid_receiptsTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/non_paid_receipts"
+                        android:textColor="?colorSecondaryVariant"
+                        android:layout_below="@+id/paid_receiptsTV"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="-20dp"
+                        android:textSize="12sp"
+                        android:textStyle="italic" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/lineCategories"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/cardMonthlyStats"
+            android:background="?android:attr/colorControlNormal"
+            android:alpha="0.3"
+            />
+
+        <!-- Annual stats -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAnnualStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="0dp"
+            android:layout_below="@id/lineCategories">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relativeTitleAnnualStats"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/yearTitleTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/annually_stats"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                    <TextView
+                        android:id="@+id/annualSummaryTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/annual_stats_summary"
+                        android:layout_below="@+id/yearTitleTV"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_round_arrow_down"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeBodyAnnualStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@+id/relativeTitleAnnualStats">
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="20dp"
+                        android:background="?android:attr/colorControlNormal"
+                        android:alpha="0.3"
+                        />
+
+                    <TextView
+                        android:id="@+id/selectYearTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_year"
+                        android:layout_below="@+id/line2"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cardDashboardSpinnerAnnualYears"
+                        android:layout_below="@+id/selectYearTV"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        app:strokeWidth="0dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="?colorPrimary">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageDashboardSpinnerYears"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_round_years"
+                                app:tint="?colorPrimary"
+                                android:layout_margin="10dp"/>
+
+                            <Spinner
+                                android:id="@+id/dashboardSpinnerYears"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:textAlignment="center"
+                                android:layout_toEndOf="@+id/imageDashboardSpinnerYears" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/selectUserAnnualTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_user"
+                        android:layout_below="@+id/cardDashboardSpinnerAnnualYears"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cardDashboardSpinnerUsersAnnualStats"
+                        android:layout_below="@+id/selectUserAnnualTextView"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        app:strokeWidth="0dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="?colorPrimary">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageDashboardSpinnerUsersAnnual"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_baseline_person"
+                                app:tint="?colorPrimary"
+                                android:layout_margin="10dp"/>
+
+                            <Spinner
+                                android:id="@+id/dashboardSpinnerUsersAnnualStats"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:textAlignment="center"
+                                android:layout_toEndOf="@+id/imageDashboardSpinnerUsersAnnual" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <HorizontalScrollView
+                        android:id="@+id/revenueContainerAnnualStatsHSV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:layout_below="@+id/cardDashboardSpinnerUsersAnnualStats"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:id="@+id/revenueContainerAnnual"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/revenueCardAmountForAnnualStats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                android:layout_margin="20dp"
+                                app:strokeColor="?colorPrimaryVariant"
+                                app:strokeWidth="1dp"
+                                app:cardElevation="8dp">
+
+                                <TextView
+                                    android:id="@+id/revenueCardAmountForAnnualStatsTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default_amount"
+                                    android:layout_margin="15dp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/add1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_round_add"
+                                android:layout_toEndOf="@+id/revenueCardAmountForAnnualStats"
+                                app:tint="?colorPrimary"
+                                android:layout_marginEnd="-10dp"
+                                android:layout_marginStart="-10dp"/>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/revenueCardExpectedAmountForAnnualStats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                android:layout_margin="20dp"
+                                app:strokeColor="?colorSecondaryVariant"
+                                app:strokeWidth="1dp"
+                                app:cardElevation="8dp"
+                                android:layout_toEndOf="@+id/add1">
+
+                                <TextView
+                                    android:id="@+id/nonPaidCardAmountForAnnualStatsTV_editable"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default_amount"
+                                    android:layout_margin="15dp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/arrowRight1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:rotation="180"
+                                android:layout_marginEnd="-10dp"
+                                android:layout_marginStart="-10dp"
+                                android:src="@drawable/ic_round_left_arrow"
+                                android:layout_toEndOf="@+id/revenueCardExpectedAmountForAnnualStats"/>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/revenueCardTotalAmountForAnnualStats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                android:layout_margin="20dp"
+                                app:strokeColor="?colorPrimary"
+                                app:strokeWidth="1dp"
+                                app:cardElevation="8dp"
+                                android:layout_toEndOf="@+id/arrowRight1">
+
+                                <TextView
+                                    android:id="@+id/revenueCardAmountForAnnualStatsTV_editable"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default_amount"
+                                    android:layout_margin="15dp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/paid_receiptsTV1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paid_receipts"
+                        android:textColor="?colorPrimaryVariant"
+                        android:layout_below="@+id/revenueContainerAnnualStatsHSV"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:textSize="12sp"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:id="@+id/nonPaid_receiptsTV1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/non_paid_receipts"
+                        android:textColor="?colorSecondaryVariant"
+                        android:layout_below="@+id/paid_receiptsTV1"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="-20dp"
+                        android:textSize="12sp"
+                        android:textStyle="italic" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

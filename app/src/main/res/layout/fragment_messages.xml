@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.MessagesFragment"
+    android:animateLayoutChanges="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeNoMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:src="@drawable/message"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/noMessageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_a_message"
+                android:textColor="?colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_below="@+id/icon"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/noMessageSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noMessageTitle"
+                android:text="@string/cannot_found_any_message_try_to_add_a_message_by_clicking_bottom_right_button"
+                android:textAlignment="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="40dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/categoryAllMessages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all_messages"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:id="@+id/categoryAllMessagesSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_5_messages_if_available"
+                android:layout_below="@+id/categoryAllMessages"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerViewMessages"
+                android:paddingBottom="15dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:layout_below="@+id/categoryAllMessagesSummary"/>
+
+            <RelativeLayout
+                android:id="@+id/layoutImportantCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_below="@+id/recyclerViewMessages"
+                android:background="?selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/iconCategory2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_round_favorite"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:tint="?colorSecondaryVariant"
+                    android:alpha="0.7"/>
+
+                <TextView
+                    android:id="@+id/categoryImportantMessages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/only_important"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textStyle="bold"
+                    android:textColor="?colorSecondaryVariant"
+                    android:alpha="0.7"
+                    android:layout_toEndOf="@+id/iconCategory2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                <TextView
+                    android:id="@+id/categoryImportantMessagesSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/iconCategory2"
+                    android:text="@string/first_5_important_messages"
+                    android:layout_below="@+id/categoryImportantMessages"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_round_left_arrow"
+                    android:rotation="180"
+                    app:tint="?android:attr/colorControlNormal"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerViewImportantMessages"
+                android:paddingBottom="15dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginBottom="70dp"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:layout_below="@+id/layoutImportantCategory"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

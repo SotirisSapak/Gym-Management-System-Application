@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.OpeningHoursFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/view">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/openingHoursTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/set_gym_schedule"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                <TextView
+                    android:id="@+id/openingHoursSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_below="@+id/openingHoursTitle"
+                    android:text="@string/opening_hours_info" />
+
+                <TextView
+                    android:id="@+id/weekdaysTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_a_day"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/openingHoursSummary"
+                    android:textColor="?colorPrimary"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/daysHSV"
+                    android:layout_below="@+id/weekdaysTV"
+                    android:scrollbars="none"
+                    android:layout_marginBottom="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/weekdaysChipLayoutMCV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp">
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp">
+
+                                <ScrollView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_monday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/monday"
+                                            android:layout_marginStart="20dp" />
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_tuesday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/tuesday"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_toEndOf="@+id/chip_monday" />
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_wednesday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/wednesday"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_toEndOf="@+id/chip_tuesday"
+                                            android:layout_marginEnd="10dp" />
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_thursday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/thursday"
+                                            android:layout_toEndOf="@+id/chip_wednesday"
+                                            android:layout_marginEnd="10dp" />
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_friday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/friday"
+                                            android:layout_toEndOf="@+id/chip_thursday"
+                                            android:layout_marginEnd="10dp" />
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_saturday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_marginStart="20dp"
+                                            android:text="@string/saturday"
+                                            android:layout_toEndOf="@+id/chip_friday"/>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:id="@+id/chip_sunday"
+                                            style="@style/Widget.MaterialComponents.Chip.Action"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/sunday"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_toEndOf="@+id/chip_saturday" />
+
+                                    </RelativeLayout>
+
+                                </ScrollView>
+
+                            </com.google.android.material.chip.ChipGroup>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
+
+                </HorizontalScrollView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/daysHSV"
+                    android:background="?android:attr/colorControlNormal"
+                    android:alpha="0.3" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/openingHoursResultsMCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="0dp"
+                    android:layout_below="@+id/daysHSV"
+                    android:animateLayoutChanges="true"
+                    android:layout_marginTop="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dayInfo">
+
+                            <TextView
+                                android:id="@+id/selectedDayTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_day"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/openingHoursSelectedDayTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monday"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:textSize="17sp"
+                                android:textColor="?colorPrimary"
+                                android:textStyle="bold"
+                                android:layout_below="@+id/selectedDayTV"/>
+
+                            <RelativeLayout
+                                android:id="@+id/weekendOptionsRL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/dayOffWeekendMB"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="@string/day_off"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="30dp"/>
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/workingDayLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_below="@+id/dayInfo">
+
+                            <View
+                                android:alpha="0.3"
+                                android:id="@+id/line1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginStart="20dp"
+                                android:background="?android:attr/colorControlNormal" />
+
+                            <TextView
+                                android:id="@+id/openingHoursAfterSelectedDayTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/line1"
+                                android:text="@string/configure_schedule"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginEnd="20dp" />
+
+                            <RelativeLayout
+                                android:id="@+id/openHoursRelativeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_marginTop="10dp"
+                                android:background="?selectableItemBackground"
+                                android:layout_below="@+id/openingHoursAfterSelectedDayTV">
+
+                                <ImageView
+                                    android:id="@+id/iconOpenHours"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_twotone_lock_open"
+                                    android:layout_marginStart="40dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:alpha="0.8"/>
+
+                                <TextView
+                                    android:id="@+id/openHourTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iconOpenHours"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:text="@string/open_at" />
+
+                                <TextView
+                                    android:id="@+id/openHourTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iconOpenHours"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:text="@string/default_open_hour"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/openHourTitle"
+                                    android:textColor="?colorPrimary"
+                                    android:textSize="18sp"
+                                    android:layout_marginBottom="10dp"/>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/closeHoursRelativeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="?selectableItemBackground"
+                                android:layout_below="@+id/openHoursRelativeLayout">
+
+                                <ImageView
+                                    android:id="@+id/iconCloseHours"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_twotone_lock"
+                                    android:layout_marginStart="40dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:alpha="0.8"/>
+
+                                <TextView
+                                    android:id="@+id/closeHourTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iconCloseHours"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:text="@string/close_at" />
+
+                                <TextView
+                                    android:id="@+id/closeHourTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iconCloseHours"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:text="@string/default_close_hour"
+                                    android:textStyle="bold"
+                                    android:textColor="?colorPrimary"
+                                    android:textSize="18sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_below="@+id/closeHourTitle"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/colorControlNormal"
+                android:alpha="0.3"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+
+                android:id="@+id/savePreferencesOpeningHoursMB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/save_preference"
+                app:icon="@drawable/ic_round_save"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:iconTint="@android:color/white"
+                android:textColor="@android:color/white"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

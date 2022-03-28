@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/admin_options">
+
+        <Preference
+            android:enabled="false"
+            android:icon="@drawable/ic_outline_info"
+            android:summary="As admin you can enable some useful features"/>
+
+        <SwitchPreference
+            android:key="preference_admin_options_dashboard"
+            android:defaultValue="false"
+            android:title="Dashboard"
+            android:summary="Enable / disable dashboard options (GYM statistics)"
+            android:icon="@drawable/ic_round_dashboard"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/messages">
+
+        <Preference
+            android:enabled="false"
+            android:icon="@drawable/ic_outline_info"
+            android:summary="Signature will appear at the end of any message you send to any user if feature is enabled"/>
+
+        <SwitchPreference
+            android:key="preference_messages_enable_disable_signature"
+            android:defaultValue="false"
+            android:title="Signature"
+            android:summary="Enable / disable signature"
+            android:icon="@drawable/ic_round_signature"/>
+
+        <EditTextPreference
+            android:defaultValue="Mr. Admin"
+            android:key="preference_messages_auto_signature"
+            android:title="Set signature"
+            android:summary="Add your signature to any message you send" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

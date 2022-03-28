@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/iconCard"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginBottom="-20dp"
+        android:layout_marginEnd="40dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_receipt"
+            android:layout_margin="16dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconCard"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/dialog_rounded_corners">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/receiptAddTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_new_receipt"
+                    android:layout_margin="20dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/receiptAddSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_receipt_summary"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="-20dp"
+                    android:layout_below="@+id/receiptAddTitle" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/receiptAddSummary"
+                    android:id="@+id/addReceiptTIL"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    app:startIconDrawable="@drawable/ic_round_message_title"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addReceiptIDET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_receipt_title" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/receiptModes"
+                    android:layout_centerHorizontal="true"
+                    android:scrollbars="none"
+                    android:layout_below="@+id/addReceiptTIL">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <!-- mode - single -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/receipt_mode_simple"
+                            android:focusable="true"
+                            android:clickable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="3dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="?colorAccent">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/single_receipt"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- mode - monthly -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/receipt_mode_monthly"
+                            android:focusable="true"
+                            android:clickable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            android:layout_toEndOf="@+id/receipt_mode_simple">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/monthly_receipt"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- mode - annually -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/receipt_mode_annually"
+                            android:focusable="true"
+                            android:clickable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            android:layout_toEndOf="@+id/receipt_mode_monthly">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/annual_receipt"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"/>
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
+
+                </HorizontalScrollView>
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/colorControlNormal"
+                    android:alpha="0.3"
+                    android:layout_below="@+id/receiptModes"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/addReceiptSelectedUserTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_user"
+                    android:layout_below="@+id/line"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"/>
+
+                <TextView
+                    android:id="@+id/addReceiptSelectedUserEntryTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/none_yet"
+                    android:layout_below="@+id/addReceiptSelectedUserTV"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="30dp"
+                    android:textStyle="bold"
+                    android:textColor="?colorPrimary"
+                    android:textSize="16sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAdapter_users"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addReceiptSelectedUserEntryTV"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:clipToPadding="false" />
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/colorControlNormal"
+                    android:alpha="0.3"
+                    android:layout_below="@+id/recyclerViewAdapter_users"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addAmountTIL"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:startIconDrawable="@drawable/ic_round_amount"
+                    android:layout_below="@+id/line1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="numberDecimal"
+                        android:id="@+id/addReceiptEnterAmountET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_amount"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_receipt"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/addAmountTIL"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:icon="@drawable/ic_round_save"
+                    android:textColor="@android:color/white"
+                    app:iconTint="@android:color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancel_action"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:layout_toStartOf="@+id/save_action"
+                    android:layout_below="@+id/addAmountTIL"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

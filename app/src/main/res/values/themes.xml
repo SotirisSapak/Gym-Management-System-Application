@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_rounded_corners</item>
+    </style>
+
+    <style name="SlidingDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <!-- Base app theme for light theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary_light</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_light</item>
+        <item name="colorAccent">@color/colorPrimaryDark_light</item>
+
+        <item name="colorPrimaryVariant">@color/colorVariant_light_green</item>
+        <item name="colorSecondaryVariant">@color/colorVariantSecondary_light_red</item>
+
+        <!-- Implement light status bar (only on MarshMallow and above) -->
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+        <item name="android:statusBarColor" tools:targetApi="M">?android:attr/colorBackground</item>
+
+        <!-- Implement light navigation bar (only on Oreo and above) -->
+        <item name="android:windowLightNavigationBar" tools:targetApi="O_MR1">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="O_MR1"
+            >?android:attr/colorBackground</item>
+
+        <!-- apply custom font globally -->
+        <item name="fontFamily">@font/averta_normal</item>
+
+    </style>
+
+    <style name="tab_text" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

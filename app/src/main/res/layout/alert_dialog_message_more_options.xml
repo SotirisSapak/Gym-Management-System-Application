@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/iconCard"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginBottom="-20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_message"
+            android:layout_margin="16dp"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconCard"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/dialog_rounded_corners">
+
+        <TextView
+            android:id="@+id/messageTitleAlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/message_title"
+            android:textColor="?colorPrimary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/moreOptionsAlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/messageTitleAlertDialog"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/options" />
+
+        <RelativeLayout
+            android:id="@+id/relativeEditMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/moreOptionsAlertDialog"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/iconOption1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_round_edit_message" />
+
+            <TextView
+                android:id="@+id/option1Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toEndOf="@+id/iconOption1"
+                android:alpha="0.8"
+                android:text="@string/edit_message"
+                android:textColor="?colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/option1Summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/option1Title"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/iconOption1"
+                android:text="@string/edit_message_summary" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeDeleteMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeEditMessage"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/iconOption2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_round_delete_message" />
+
+            <TextView
+                android:id="@+id/option2Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toEndOf="@+id/iconOption2"
+                android:alpha="0.8"
+                android:text="@string/delete_message"
+                android:textColor="?colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/option2Summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/option2Title"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/iconOption2"
+                android:text="@string/delete_message_summary" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/alertCancel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeDeleteMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/cancel" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

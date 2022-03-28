@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="3dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/item_holder">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/layoutContentInfoReceipt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/recyclerViewAdapterMessages_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/default_message_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="?colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/recyclerViewAdapterMessages_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recyclerViewAdapterMessages_title"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/default_message_summary_long" />
+
+                <TextView
+                    android:id="@+id/recyclerViewAdapterMessages_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recyclerViewAdapterMessages_summary"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/receipt_adapter_date_default_value"
+                    android:textStyle="italic" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:alpha="0.4"
+        android:id="@+id/ic_important"
+        android:visibility="visible"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_round_favorite"
+        android:layout_below="@+id/item_holder"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        app:tint="?colorSecondaryVariant" />
+
+    <TextView
+        android:id="@+id/open_parenthesis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="("
+        android:textSize="14sp"
+        android:layout_below="@+id/item_holder"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"/>
+    <ImageView
+        android:alpha="0.6"
+        android:id="@+id/iconUsers"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_round_person"
+        android:layout_below="@+id/item_holder"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/open_parenthesis"/>
+    <TextView
+        android:id="@+id/users_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:textSize="14sp"
+        android:layout_below="@+id/item_holder"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/iconUsers"/>
+    <TextView
+        android:id="@+id/close_parenthesis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=")"
+        android:textSize="14sp"
+        android:layout_below="@+id/item_holder"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/users_counter"/>
+
+</RelativeLayout>

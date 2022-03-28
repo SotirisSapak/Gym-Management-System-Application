@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base app theme for light theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary_dark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_dark</item>
+        <item name="colorAccent">@color/colorPrimaryDark_dark</item>
+
+        <item name="colorPrimaryVariant">@color/colorVariant_dark_green</item>
+        <item name="colorSecondaryVariant">@color/colorVariantSecondary_dark_red</item>
+
+        <item name="android:statusBarColor" tools:targetApi="M">?android:attr/colorBackground</item>
+
+        <item name="android:navigationBarColor" tools:targetApi="O_MR1"
+            >?android:attr/colorBackground</item>
+
+        <!-- apply custom font globally -->
+        <item name="fontFamily">@font/averta_normal</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/iconCard"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginBottom="-20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_receipt"
+            android:layout_margin="16dp"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:background="@drawable/dialog_rounded_corners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/iconCard">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/alertDialogReceipt_receiptID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/receipt_adapter_default"
+            android:textColor="?colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/optionsTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/options"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/alertDialogReceipt_receiptID"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeCheckReceipt"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?selectableItemBackground"
+            android:layout_below="@+id/optionsTV">
+
+            <ImageView
+                android:id="@+id/iconOption1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_check"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/option1Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_receipt"
+                android:layout_toEndOf="@+id/iconOption1"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?colorPrimary"
+                android:alpha="0.8"/>
+
+            <TextView
+                android:id="@+id/option1Summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/did_the_user_pay_the_receipt"
+                android:layout_toEndOf="@+id/iconOption1"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/option1Title"
+                android:layout_marginBottom="15dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeDeleteReceipt"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?selectableItemBackground"
+            android:layout_below="@+id/relativeCheckReceipt">
+
+            <ImageView
+                android:id="@+id/iconOption2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_delete_message"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/option2Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_receipt"
+                android:layout_toEndOf="@+id/iconOption2"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?colorPrimary"
+                android:alpha="0.8"/>
+
+            <TextView
+                android:id="@+id/option2Summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/this_option_will_permanent_delete_this_receipt"
+                android:layout_toEndOf="@+id/iconOption2"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/option2Title"
+                android:layout_marginBottom="15dp"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/cancel_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_below="@+id/relativeDeleteReceipt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

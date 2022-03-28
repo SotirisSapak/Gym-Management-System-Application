@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="receipt_paid_green">#4CAF50</color>
+    <color name="receipt_not_paid_red">#C62929</color>
+
+
+    <!-- ++++++++++ base theme colors ++++++++++ -->
+
+    <!-- for light theme -->
+    <color name="colorPrimary_light">#E62828BC</color>
+    <color name="colorPrimaryDark_light">#E62828BC</color>
+
+    <color name="colorVariant_light_green">#4CAF50</color>
+    <color name="colorVariantSecondary_light_red">#C62929</color>
+
+    <!-- for dark theme -->
+    <color name="colorPrimary_dark">#708CFF</color>
+    <color name="colorPrimaryDark_dark">#708CFF</color>
+    <color name="colorVariant_dark_green">#81C784</color>
+    <color name="colorVariantSecondary_dark_red">#E57373</color>
+
+</resources>
