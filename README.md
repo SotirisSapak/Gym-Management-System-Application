@@ -1,4 +1,4 @@
-# GYM Management System Application
+# GYM Management System Application (senior thesis)
 
 Just a senior thesis. This is an android application that simplifies the receipt system of a gym. Chance of experiment with Firebase Firestore technology from Google because one of the requirements for this app is to store its data online.
 
